@@ -15,11 +15,12 @@ void main(void)
 	mvprintw((row/2)-3, (col-32)/2, "Man hinh terminal cua ban khong ho tro mau sac");
 
 	start_color();	/* Bật chế độ màu */
-	//Tạo 2 index màu
+	//Tạo 3 index màu
 	init_pair(1, COLOR_RED, COLOR_BLUE);
-	init_pair(2, COLOR_MAGENTA, COLOR_GREEN);
+	init_pair(2, COLOR_YELLOW, COLOR_BLUE);
+	init_pair(3, COLOR_MAGENTA, COLOR_GREEN);
 
-	//Tạo màu cho màn hình nhập tên
+	//Tạo màu index 1 cho màn hình nhập tên
 	attron(COLOR_PAIR(1) | A_BOLD);
 
 	/* In ra số dòng và số cột của màn hình terminal
@@ -29,16 +30,25 @@ void main(void)
 
 	mvprintw(row/2, (col-32)/2, "%s", nhap);
 
+	//Tắt hiệu ứng màu index 1
+	attroff(COLOR_PAIR(1) | A_BOLD);
+
+	//Tạo màu index 2 cho chữ nhập vào
+	attron(COLOR_PAIR(2) | A_BOLD);
+
  	getstr(hoten);
 
-	//Tắt hiệu ứng màu
-        attroff(COLOR_PAIR(1) | A_BOLD);
+	//Tắt hiệu ứng màu index 2
+	attroff(COLOR_PAIR(2) | A_BOLD);
 
  	/* Xóa màn hình */
  	erase();
 	
-	//Tạo màu cho màn hình mới
-	attron(COLOR_PAIR(2) | A_BOLD);
+	//Tạo màu index 3 cho toàn bộ màn hình terminal
+	wbkgd(stdscr, COLOR_PAIR(3));
+
+	//Tạo màu cho màn hình mới, A_BLINK là chữ nhấp nháy
+	attron(COLOR_PAIR(3) | A_BOLD | A_BLINK);
 
  	/* In giữa màn hình dòng chữ Chao ban tên_bạn
  	chuỗi 'Chao ban ' có độ dài là 9 */
@@ -48,7 +58,7 @@ void main(void)
 		mvprintw((row/2)+1, (col-(strlen(hoten)+9))/2, "Chao ban %s", hoten);	
 
 	//Tắt hiệu ứng màu
-	attroff(COLOR_PAIR(2) | A_BOLD);
+	attroff(COLOR_PAIR(3) | A_BOLD | A_BLINK);
 
  	getch();	/* Nhấn 1 phím để kết thúc chương trình */
  	endwin();	/* Kết thúc chế độ curses*/
