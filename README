@@ -1,5 +1,7 @@
 Một chương trình đơn giản viết bằng C trên Linux
 
+Chữ và nền chữ có màu
+
 Hiển thị số dòng và số cột của màn hình terminal
 
 In ra giữa màn hình dòng chữ "Chao ban tên_bạn"
