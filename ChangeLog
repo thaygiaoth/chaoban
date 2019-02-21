@@ -1,8 +1,11 @@
+21/02/2019: 1.1
+- Chữ và nền chữ có màu
+
 21/02/2019: 1.0
 - Trang man là chữ Việt có dấu
 - Các file khác sửa lại phần nội dung, ghi chú là chữ Việt có dấu
 - Thêm hướng dẫn cài trên CentOS 7 trong INSTALL
 
 21/02/2019: 0.9
-- Cung cấp mã nguồn để minh họa các lệnh autoreconf -iv, autoscan, aclocal, automake --add-missing...
+- Cung cấp mã nguồn để minh họa các lệnh autoscan, aclocal, automake --add-missing...
 - Có chương trình chaoban và trang hướng dẫn chaoban (man page)
