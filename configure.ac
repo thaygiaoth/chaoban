@@ -1,20 +1,21 @@
-AC_INIT(chaoban, 0.9, thaygiaoth@gmail.com)
+AC_INIT(chaoban, 1.0, thaygiaoth@gmail.com, [], https://github.com/thaygiaoth/chaoban)
 
-# Cac script sinh ra khi chay lenh autoreconf -iv se nam trong thu muc build-aux 
+# Các script sinh ra sau khi chạy lệnh autoreconf -iv sẽ nằm trong thư mục build-aux 
 AC_CONFIG_AUX_DIR([build-aux])
 
-# subdir-objects de biet cac file ma nguon chua trong thu muc nao do
+# Sử dụng subdir-objects khi file mã nguồn *.c chứa trong thư mục con
 AM_INIT_AUTOMAKE(-Wall -Werror subdir-objects foreign)
 
 AC_PROG_CC(gcc cc cl) 
 
-# Neu su dung automake < 1.14
+# Nếu sử dụng automake < 1.14
 AM_PROG_CC_C_O
 
-# Cai dat vao /usr/bin, mac dinh se cai vao /usr/local/bin
-# Neu muon duong dan khac thi chon ./configure --prefix=/path
+# Cài vào /usr/bin, mặc định sẽ cài vào /usr/local/bin
+# Nếu muốn đường dẫn khác thì chọn ./configure --prefix=/path
 AC_PREFIX_DEFAULT(/usr)
 
+# Tạo ra Makefile ở đường dẫn hiện tại
 AC_CONFIG_FILES(Makefile)
 
 AC_OUTPUT
