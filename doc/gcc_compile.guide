@@ -1,9 +1,9 @@
-Khi ta khai bao #include <header_name.h> trong cac file *.c
-trong qua trinh bien dich gcc se tim cac file header_name.h o cac duong dan sau
+Khi ta khai báo #include <header_name.h> trong các file *.c 
+trong quá trình biên dịch gcc sẽ tìm các file header_name.h ở các đường dẫn sau
 
 cpp -v /dev/null -o /dev/null
 
-hoac
+hoặc
 
 gcc -v -x c -E /dev/null
 
@@ -20,5 +20,5 @@ End of search list.
 
 ...
 
-Tham khao:
+Tham khảo:
 https://gcc.gnu.org/onlinedocs/cpp/Search-Path.html
