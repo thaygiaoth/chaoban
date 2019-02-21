@@ -1,0 +1,24 @@
+Khi ta khai bao #include <header_name.h> trong cac file *.c
+trong qua trinh bien dich gcc se tim cac file header_name.h o cac duong dan sau
+
+cpp -v /dev/null -o /dev/null
+
+hoac
+
+gcc -v -x c -E /dev/null
+
+...
+
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/7/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+
+...
+
+Tham khao:
+https://gcc.gnu.org/onlinedocs/cpp/Search-Path.html

@@ -1,0 +1,45 @@
+Buoc 1: Cai trinh bien dich gcc, make, automake, autoconf va thu vien ncurses 
+
+Debian/Ubuntu 18.04
+apt -y install gcc make automake autoconf libncurses5-dev
+
+RHEL/CentOS 7
+yum -y install gcc make automake autoconf ncurses-devel
+
+Buoc 2: Cai tu ma nguon (source code)
+
+autoreconf -iv
+
+./configure
+
+---Tao cac target cho make vi du make check | clean | mostlyclean...
+
+make 
+
+---Cai ung dung bang make
+
+make install
+
+---Co the ket hop 2 lenh lai nhu sau
+
+make && make install
+
+Buoc 3: Chay chuong trinh
+
+chaoban
+
+---Xem trang huong dan (manpage)
+
+man chaoban
+
+---Gom cac file ma nguon cua ung dung thanh 1 file .tar.gz
+
+make dist
+
+---Xem noi dung file .tar.gz
+
+tar -ztf chaoban-0.9.tar.gz
+
+---Tra ve ma nguon (source code) ban dau sau khi chay lenh make install
+
+make maintainer-clean

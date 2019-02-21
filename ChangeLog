@@ -1,0 +1,3 @@
+21/02/2019: 0.9
+- Cung cap ma nguon de minh hoa cac lenh autoreconf -iv, autoscan, aclocal, automake --add-missing...
+- Co chuong trinh chaoban va trang huong dan chaoban (man page)

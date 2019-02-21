@@ -1,0 +1,44 @@
+/* Autoconf requirements
+     AC_INIT(package, version, bug-report-address)
+     information on the package
+     checks for programs
+     checks for libraries
+     checks for header files
+     checks for types
+     checks for structures
+     checks for compiler characteristics
+     checks for library functions
+     checks for system services
+     AC_CONFIG_FILES([file...])
+     AC_OUTPUT
+
+     AC_ la cac Autoconf macro
+     AM_ la cac Automake macro
+
+https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/Autoconf-Input-Layout.html 
+*/
+
+/* AC_INIT (package, version, bug-report-address) */
+
+AC_INIT(chaoban, 0.9, thaygiaoth@gmail.com)
+
+/* Bat tuy chon hien thi cac canh bao -W(arning), cac loi -Wall -Werror
+foreign la tuy chon bo qua cac canh bao neu chuong trinh khong theo chuan GNU (khong co ChangeLog, AUTHORS...)
+Danh sach cac tuy chon cua AM_INIT_AUTOMAKE
+https://www.gnu.org/software/automake/manual/automake.html#Options 
+*/
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+
+/* AC_PROG_CC([compiler-search-list])
+Danh sach cac trinh bien dich de tim va bien dich, thay doi thu tu neu muon */
+AC_PROG_CC([gcc cc cl]) 
+
+/*
+Tao ra file Makefile.in neu da ton tai Makefile.am
+Dung lenh make distclean de xoa file nay
+https://www.gnu.org/software/automake/manual/html_node/Requirements.html
+*/
+AC_CONFIG_FILES(Makefile)
+
+/* sinh ra file config.status va chay file nay. Goi macro nay chi 1 lan o cuoi file configure.ac. */
+AC_OUTPUT
