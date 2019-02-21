@@ -1,4 +1,4 @@
-Buoc 1: Cai trinh bien dich gcc, make, automake, autoconf va thu vien ncurses 
+Bước 1: Cài trình biên dịch gcc, make, automake, autoconf và thư viện ncurses
 
 Debian/Ubuntu 18.04
 apt -y install gcc make automake autoconf libncurses5-dev
@@ -6,40 +6,45 @@ apt -y install gcc make automake autoconf libncurses5-dev
 RHEL/CentOS 7
 yum -y install gcc make automake autoconf ncurses-devel
 
-Buoc 2: Cai tu ma nguon (source code)
-
-autoreconf -iv
+Bước 2: Cài chaoban từ mã nguồn (source code)
 
 ./configure
 
----Tao cac target cho make vi du make check | clean | mostlyclean...
+---Mặc định cài vào /usr/bin (xem thêm AC_PREFIX_DEFAULT trong configure.ac)
+---Nếu muốn cài vào đường dẫn khác ví dụ /usr/local/bin thì ./configure --prefix=/usr/local
+
+---Nếu cài trên CentOS 7 thì thực hiện thêm
+ln -s /usr/bin/aclocal /usr/bin/aclocal-1.15
+ln -s /usr/bin/automake /usr/bin/automake-1.15
+
+---Tạo các target cho make ví dụ make check | clean | mostlyclean...
 
 make 
 
----Cai ung dung bang make
+---Cài ứng dụng bằng make
 
 make install
 
----Co the ket hop 2 lenh lai nhu sau
+---Có thể kết hợp 2 lệnh lại như sau
 
 make && make install
 
-Buoc 3: Chay chuong trinh
+Bước 3: Chạy chương trình
 
 chaoban
 
----Xem trang huong dan (manpage)
+---Xem trang hướng dẫn (man page)
 
 man chaoban
 
----Gom cac file ma nguon cua ung dung thanh 1 file .tar.gz
+---Gom các file mã nguồn của ứng dụng thành 1 file .tar.gz
 
 make dist
 
----Xem noi dung file .tar.gz
+---Xem nội dung file .tar.gz
 
-tar -ztf chaoban-0.9.tar.gz
+tar -ztf chaoban-1.0.tar.gz
 
----Tra ve ma nguon (source code) ban dau sau khi chay lenh make install
+---Trả về mã nguồn (source code) ban đầu sau khi chạy lệnh make install
 
 make maintainer-clean
