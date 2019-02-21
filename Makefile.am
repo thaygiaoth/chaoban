@@ -1,18 +1,18 @@
-## sbin_PROGRAMS neu muon cai vao /prefix/sbin
+## sbin_PROGRAMS nếu muốn cài vào /prefix/sbin
 bin_PROGRAMS = chaoban
 
-## Chi ra cac file ma nguon de bien dich, cac file cach nhau bang khoang trang
+## Chỉ ra các file mã nguồn để biên dịch, các file cách nhau bằng khoảng trắng
 chaoban_SOURCES = src/main.c
 
-## Giong bien dich bang gcc ... -lncurses
+## Để biên dịch bằng gcc ... -lncurses
 chaoban_LDADD = -lncurses
 
-## Chi ra trang man de cai vao he thong
+## Chỉ ra trang man cài vào hệ thống
 man_MANS = man/chaoban.1
 
-## Dinh nghia cac file se xoa bang lenh make maintainer-clean
+## Định nghĩa các file sẽ xóa bằng lệnh make maintainer-clean 
 MAINTAINERCLEANFILES = Makefile.in configure aclocal.m4
 
-## Xoa thu muc thi khai bao lenh shell nhu ben duoi
+## Xóa thư mục thì khai báo lệnh shell và chỉ ra thư mục cần xóa như bên dưới
 maintainer-clean-local:
 	-rm -rf build-aux autom4te.cache
