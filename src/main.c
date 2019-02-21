@@ -10,6 +10,17 @@ void main(void)
  	initscr();			/* Bắt đầu chế độ curses */
  	getmaxyx(stdscr, row, col);	/* Lấy số dòng và số cột của màn hình terminal */
 
+	//Kiểm tra màn hình terminal có hỗ trợ màu hay không
+	if (has_colors() == FALSE)
+	mvprintw((row/2)-3, (col-32)/2, "Man hinh terminal cua ban khong ho tro mau sac");
+
+	start_color();	/* Bật chế độ màu */
+	//Tạo 2 index màu
+	init_pair(1, COLOR_RED, COLOR_BLUE);
+	init_pair(2, COLOR_MAGENTA, COLOR_GREEN);
+
+	//Tạo màu cho màn hình nhập tên
+	attron(COLOR_PAIR(1) | A_BOLD);
 
 	/* In ra số dòng và số cột của màn hình terminal
 	Giả sử số dòng là xx, số cột là yyy hoặc ngược lại
@@ -20,8 +31,14 @@ void main(void)
 
  	getstr(hoten);
 
+	//Tắt hiệu ứng màu
+        attroff(COLOR_PAIR(1) | A_BOLD);
+
  	/* Xóa màn hình */
  	erase();
+	
+	//Tạo màu cho màn hình mới
+	attron(COLOR_PAIR(2) | A_BOLD);
 
  	/* In giữa màn hình dòng chữ Chao ban tên_bạn
  	chuỗi 'Chao ban ' có độ dài là 9 */
@@ -29,6 +46,9 @@ void main(void)
  		mvprintw((row/2), (col-(strlen(hoten)+9))/2, "Chao ban %s", hoten);
  	else
 		mvprintw((row/2)+1, (col-(strlen(hoten)+9))/2, "Chao ban %s", hoten);	
+
+	//Tắt hiệu ứng màu
+	attroff(COLOR_PAIR(2) | A_BOLD);
 
  	getch();	/* Nhấn 1 phím để kết thúc chương trình */
  	endwin();	/* Kết thúc chế độ curses*/
