@@ -1,5 +1,10 @@
+21/02/2019: 1.2 beta
+- Tên nhập vào là màu vàng
+- Toàn bộ màu nền của terminal là xanh lá cây
+- Dòng chữ 'Chao ban tên_bạn' nhấp nháy (chớp tắt) nếu terminal hỗ trợ hiệu ứng chữ nhấp nháy
+
 21/02/2019: 1.1
-- Chữ và nền chữ có màu
+- Chữ và màn hình nền có màu
 
 21/02/2019: 1.0
 - Trang man là chữ Việt có dấu
