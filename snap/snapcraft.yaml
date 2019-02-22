@@ -1,12 +1,12 @@
 name: chaoban
 base: core18
-version: '1.1'
+version: '1.2'
 summary: Chương trình in giữa màn hình dòng chữ "Chao ban ten_ban"
 description: |
   Viết bằng C trên Linux, sử dụng thư viện ncurses
 icon: robusta_logo_256x256.png
-grade: stable
-confinement: strict
+grade: devel
+confinement: devmode
 
 apps:
   chaoban:
@@ -17,7 +17,7 @@ parts:
     plugin: autotools
     source: https://github.com/thaygiaoth/chaoban.git
     source-type: git
-    source-tag: 'v1.1'
+    source-tag: 'v1.2beta'
     build-packages:
       - libncurses5
       - libncurses5-dev
