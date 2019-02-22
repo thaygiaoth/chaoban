@@ -1,0 +1,23 @@
+name: chaoban
+base: core18
+version: '0.9'
+summary: Chương trình in giữa màn hình dòng chữ "Chao ban ten_ban"
+description: |
+  Viết bằng C trên Linux, sử dụng thư viện ncurses
+icon: /root/chaoban/robusta_logo_256x256.png
+grade: stable
+confinement: strict
+
+apps:
+  chaoban:
+    command: bin/chaoban
+
+parts:
+  chaoban:
+    plugin: autotools
+    source: /root/chaoban
+    build-packages:
+      - libncurses5
+      - libncurses5-dev
+    stage-packages:
+      - libncurses5
