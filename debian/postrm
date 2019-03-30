@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+# Có thể không xóa home do có REMOVE_HOME = 0 trong /etc/deluser.conf
+deluser --remove-home --system chaoban
+
+exit 0

@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+# Chạy file này để sử dụng các db_* bên dưới
+. /usr/share/debconf/confmodule
+
+# Tiêu đề của teamplate
+db_title Thông tin về chaoban
+
+# Sau khi cài gói chaoban, muốn xem lại thông báo thì dùng lệnh:
+# dpkg-reconfigure chaoban
+
+# Hệ thống mặc định chỉ hiển thị template nếu có độ ưu tiên từ high
+# Ta có thể chỉ định biến môi trường: DEBIAN_PRIORITY=low|medium|high|critical 
+# Ví dụ: DEBIAN_PRIORITY=low apt -y install postfix
+
+# Nếu có "$1" = "configure" như bên dưới thì mới dùng được lệnh:
+# dpkg-preconfigure chaoban_1.0-1_amd64.deb
+
+# Sau khi thực hiện dpkg-preconfigure phải xóa cờ Flags: seen trong /var/cache/debconf/config.dat
+# của template chaoban/chitiet, chaoban/chung để thực hiên lại được
+
+if [ "$1" = "configure" ] || [ "$1" = "reconfigure" ]; then
+
+	# Thiết lập template chaoban/chung, chaoban/chitiet không có cờ (flag) là seen (mặc định có)
+	# db_fset chaoban/chung   seen false
+	# db_fset chaoban/chitiet seen false
+	
+	# Hiển thị thông báo
+	db_input high chaoban/chung || true
+	db_go
+
+	# Lấy giá trị yes/no từ thông báo (no=false)
+	db_get chaoban/chung
+	
+	if [ "$RET" = "false" ]; then
+		db_input high chaoban/chitiet || true
+		db_go
+	fi
+fi

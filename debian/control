@@ -1,0 +1,16 @@
+Source: chaoban
+Section: education
+Priority: optional
+Maintainer: Nguyen Trung Hieu <thaygiaoth@gmail.com>
+Build-Depends: debhelper (>= 10), autotools-dev
+Standards-Version: 4.1.4
+Homepage: https://github.com/thaygiaoth/chaoban
+
+Package: chaoban
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: In ra giữa màn hình dòng chữ 'Chao ban: tên_bạn'
+ Một chương trình đơn giản viết bằng C trên Linux.
+ Chữ và nền chữ có màu.
+ Hiển thị số dòng và số cột của màn hình terminal.
+ Sử dụng thư viện ncurses.

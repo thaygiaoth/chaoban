@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+# Phải có file preinst hoặc postinst nội dung như vậy để khi cài hiển thị thông báo của debconf
+
+. /usr/share/debconf/confmodule
+
+exit 0

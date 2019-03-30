@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+# Hiển thị các lệnh thực hiện và chi tiết quá trình thực hiện autoconf
+export DH_VERBOSE = 1
+
+override_dh_installdirs:
+	dh_installdirs
+
+	# Chép file cấu hình chaoban.conf vào etc để khi cài có /etc/chaoban.conf
+	mkdir debian/chaoban/etc
+	install -o root -g root -m 0440 debian/conf/chaoban.conf debian/chaoban/etc/
+
+override_dh_auto_install:
+	dh_auto_install
+	# Xem log ../chaoban_0.9-1_amd64.changes sẽ thấy có dòng lệnh dưới, minh họa DH_VERBOSE = 1 
+	echo "Biến CURDIR là $(CURDIR)"
+
+# v0.9 chạy các lệnh: autoreconf -f -i && ./configure && make && make install
+# = dh $@ (mặc định có --with autoreconf để chạy các lệnh ở trên)
+
+# v1.0 chạy các lệnh: ./configure && make && make install
+# nên sử dụng dòng dưới để qua lệnh autoreconf -f -i
+# override_dh_autoreconf:
+
+%:
+	dh $@

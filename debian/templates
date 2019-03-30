@@ -1,0 +1,15 @@
+Template: chaoban/chung
+Type: boolean
+Description: Bạn có muốn xem thêm thông tin về ứng dụng chaoban không?
+ Ứng dụng chaoban lấy cảm hứng từ GNU Hello.
+
+Template: chaoban/chitiet
+Type: note
+Description: Một chương trình đơn giản viết bằng C trên Linux
+ Hiển thị số dòng và số cột của màn hình terminal
+ .
+ In ra giữa màn hình dòng chữ "Chao ban tên_bạn"
+ .
+ Chữ và nền chữ có màu --> sử dụng thư viện ncurses
+ .
+ Vui lòng góp ý để cải tiến chương trình này.

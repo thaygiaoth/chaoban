@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+adduser --system --home /var/chaoban --shell /usr/sbin/nologin --group chaoban
+
+chown root:chaoban /etc/chaoban.conf
+
+exit 0
