@@ -19,7 +19,7 @@ override_dh_auto_install:
 # = dh $@ (mặc định có --with autoreconf để chạy các lệnh ở trên)
 
 # v1.0 chạy các lệnh: ./configure && make && make install
-# nên sử dụng dòng dưới để qua lệnh autoreconf -f -i
+# nên sử dụng dòng dưới để bỏ qua lệnh autoreconf -f -i
 # override_dh_autoreconf:
 
 %:
