@@ -2,13 +2,13 @@ Source: chaoban
 Section: education
 Priority: optional
 Maintainer: Nguyen Trung Hieu <thaygiaoth@gmail.com>
-Build-Depends: debhelper (>= 10), autotools-dev
+Build-Depends: debhelper (>= 10)
 Standards-Version: 4.1.4
 Homepage: https://github.com/thaygiaoth/chaoban
 
 Package: chaoban
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: libncurses5-dev, ${shlibs:Depends}, ${misc:Depends}
 Description: In ra giữa màn hình dòng chữ 'Chao ban: tên_bạn'
  Một chương trình đơn giản viết bằng C trên Linux.
  Chữ và nền chữ có màu.
