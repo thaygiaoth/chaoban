@@ -8,7 +8,7 @@ Homepage: https://github.com/thaygiaoth/chaoban
 
 Package: chaoban
 Architecture: any
-Depends: libncurses5-dev, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: In ra giữa màn hình dòng chữ 'Chao ban: tên_bạn'
  Một chương trình đơn giản viết bằng C trên Linux.
  Chữ và nền chữ có màu.
