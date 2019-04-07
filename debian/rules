@@ -12,7 +12,8 @@ override_dh_installdirs:
 
 override_dh_auto_install:
 	dh_auto_install
-	# Xem log ../chaoban_0.9-1_amd64.changes sẽ thấy có dòng lệnh dưới, minh họa DH_VERBOSE = 1 
+	# Xem file log ../chaoban_1.0-2_amd64.build nếu sử dụng debuild
+	# sẽ thấy có dòng lệnh dưới, minh họa DH_VERBOSE = 1 
 	echo "Biến CURDIR là $(CURDIR)"
 
 # v0.9 chạy các lệnh: autoreconf -f -i && ./configure && make && make install
